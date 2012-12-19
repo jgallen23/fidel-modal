@@ -42,18 +42,44 @@ module.exports = function(grunt) {
         run: true
       }
     },
+    less:{
+      modal: {
+        files: {
+          'dist/fidel-modal.css': 'lib/modal.less'
+        }
+      }
+    },
     watch: {
       js: {
-        files: '<config:lint.all>',
-        tasks: 'default' 
+        files: [
+          '<config:lint.all>',
+          'test/index.html',
+          'example/*'
+        ],
+        tasks: 'script' 
+      },
+      less: {
+        files: [
+          'lib/modal.less'
+        ],
+        tasks: 'less'
       }
+    },
+    reloadr: {
+      test: [
+        'dist/*',
+        'test/*'
+      ]
     },
     server:{
       port: 8000,
       base: '.'
     }
   });
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-reloadr');
   grunt.loadNpmTasks('grunt-mocha');
-  grunt.registerTask('default', 'lint concat min mocha');
-  grunt.registerTask('dev', 'server watch');
+  grunt.registerTask('script', 'lint concat min');
+  grunt.registerTask('default', 'script less');
+  grunt.registerTask('dev', 'default server reloadr watch');
 };
