@@ -1,8 +1,8 @@
 /*!
  * fidel-modal - Modal plugin built with fidel
- * v0.1.0
+ * v0.1.2
  * https://github.com/jgallen23/fidel-modal
- * copyright Greg Allen 2012
+ * copyright Greg Allen 2013
  * MIT License
 */
 
