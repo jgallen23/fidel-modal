@@ -1,4 +1,9 @@
 
+0.1.3 / 2013-05-09 
+==================
+
+  * [bower] renamed to bower.json, removed explicit dep on jquery
+
 0.1.2 / 2013-01-15 
 ==================
 
