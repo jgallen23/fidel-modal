@@ -6,7 +6,6 @@
   "license": "MIT",
   "copyright": "Greg Allen",
   "dependencies": {
-    "jquery": "~1.8.3",
     "fidel": "2.*",
     "baseline": "0.*"
   }
