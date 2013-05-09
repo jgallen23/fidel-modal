@@ -1,4 +1,11 @@
 
+0.1.4 / 2013-05-09 
+==================
+
+  * [grunt] updated to pull from bower.json
+  * [lib] bind backdrop clicks on show
+  * [lib] wrapped $ in jquery call
+
 0.1.3 / 2013-05-09 
 ==================
 
