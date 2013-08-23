@@ -1,3 +1,43 @@
 #fidel-modal
 
-Documentation coming soon.  Please see [example](https://github.com/jgallen23/fidel-modal/blob/master/example/index.html) and [tests](https://github.com/jgallen23/fidel-modal/blob/master/test/fidel-modal.test.js) for how to use.
+Modal plugin built with fidel
+
+##Installation
+
+###Bower
+
+`bower install fidel-modal`
+
+###Manual Download
+
+- [Development]()
+- [Production]()
+
+##Usage
+
+Docs coming soon
+
+##Development
+
+###Requirements
+
+- node and npm
+- bower `npm install -g bower`
+- grunt `npm install -g grunt-cli`
+
+###Setup
+
+- `npm install`
+- `bower install`
+
+###Run
+
+`grunt dev`
+
+or for just running tests on file changes:
+
+`grunt ci`
+
+###Tests
+
+`grunt mocha`

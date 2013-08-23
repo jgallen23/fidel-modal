@@ -2,11 +2,15 @@
   "name": "fidel-modal",
   "description": "Modal plugin built with fidel",
   "version": "0.1.4",
-  "homepage": "https://github.com/jgallen23/fidel-modal",
+  "homepage": "https://github.com/jgallen23/fidel-modal/",
   "license": "MIT",
   "copyright": "Greg Allen",
+  "main": "dist/fidel.fidel-modal.js",
   "dependencies": {
-    "fidel": "2.*",
-    "baseline": "0.*"
+    "fidel": "2.*"
+  },
+  "devDependencies": {
+    "assert": "*",
+    "oban": "*"
   }
 }
