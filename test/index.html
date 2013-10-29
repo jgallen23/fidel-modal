@@ -2,11 +2,15 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>fidel-modal Tests</title>
-  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+  <title>overlay Tests</title>
+  <link rel="stylesheet" href="../node_modules/grunt-mocha/node_modules/mocha/mocha.css" />
   <script src="../bower_components/assert/assert.js"></script>
   <script src="../node_modules/grunt-mocha/node_modules/mocha/mocha.js"></script>
-  <!--<script src="../bower_components/blanket/dist/qunit/blanket.min.js" data-cover-adapter="../components/blanket/src/adapters/mocha-blanket.js"></script>-->
+  <script>
+    if (window.location.search == '?blanket=1') {
+      document.write('<scr'+'ipt src="../bower_components/blanket/dist/qunit/blanket.min.js" data-cover-adapter="../bower_components/blanket/src/adapters/mocha-blanket.js"></sc'+'ript>');
+    }
+  </script>
   <script>mocha.setup('tdd')</script>
 </head>
 <body>
@@ -16,8 +20,8 @@
   </div>
   <script src="../bower_components/jquery/jquery.js"></script>
   <script src="../bower_components/fidel/dist/fidel.js" data-cover></script>
-  <script src="../dist/fidel.modal.js" data-cover></script>
-  <script src="fidel-modal.test.js"></script>
+  <script src="../dist/fidel.overlay.js" data-cover></script>
+  <script src="overlay.test.js"></script>
   <script>
     if (navigator.userAgent.indexOf('PhantomJS') < 0) {
       mocha.run();

@@ -1,16 +1,24 @@
 {
-  "name": "fidel-modal",
-  "description": "Modal plugin built with fidel",
+  "name": "overlay",
+  "description": "Modal plugin",
   "version": "0.1.5",
-  "homepage": "https://github.com/jgallen23/fidel-modal/",
+  "homepage": "https://github.com/firstandthird/overlay",
   "license": "MIT",
-  "copyright": "Greg Allen",
-  "main": "dist/fidel.fidel-modal.js",
+  "copyright": "First + Third",
+  "main": "dist/fidel.overlay.js",
   "dependencies": {
     "fidel": "2.*"
   },
   "devDependencies": {
     "assert": "*",
-    "oban": "*"
-  }
+    "blanket": "*"
+  },
+  "ignore": [
+    "test",
+    "example",
+    "lib",
+    "Gruntfile.js",
+    "package.json",
+    "grunt"
+  ]
 }

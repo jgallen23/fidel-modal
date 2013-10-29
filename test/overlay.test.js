@@ -1,6 +1,6 @@
 
 
-suite('fidel.modal', function() {
+suite('overlay', function() {
 
   var el;
 

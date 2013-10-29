@@ -1,8 +1,9 @@
+
 /*!
- * fidel-modal - Modal plugin built with fidel
+ * overlay - Modal plugin
  * v0.1.5
- * https://github.com/jgallen23/fidel-modal/
- * copyright Greg Allen 2013
+ * https://github.com/firstandthird/overlay
+ * copyright First + Third 2013
  * MIT License
 */
 
