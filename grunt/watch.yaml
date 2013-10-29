@@ -5,6 +5,11 @@ lib:
     - '<%= jshint.lib %>'
   tasks:
     - 'scripts'
+styles:
+  files:
+    - 'lib/*.less'
+  tasks:
+    - 'less'
 test:
   files:
     - '<%= jshint.test %>'

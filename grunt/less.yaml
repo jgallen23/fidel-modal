@@ -1,0 +1,7 @@
+options:
+  paths:
+    - 'bower_components'
+
+styles:
+  files:
+    'dist/fidel.overlay.css': 'lib/modal.less'
