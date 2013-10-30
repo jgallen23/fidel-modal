@@ -1,4 +1,12 @@
 
+0.2.0 / 2013-10-29 
+==================
+
+  * renamed to $().overlay
+  * updated build files
+  * added less build task
+  * initial work on renaming to overlay
+
 0.1.5 / 2013-08-23 
 ==================
 

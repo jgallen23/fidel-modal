@@ -1,7 +1,7 @@
 
 /*!
  * overlay - Modal plugin
- * v0.1.5
+ * v0.2.0
  * https://github.com/firstandthird/overlay
  * copyright First + Third 2013
  * MIT License
@@ -198,17 +198,17 @@
 
 
 (function($) {
-  $.declare('modal', {
+  $.declare('overlay', {
     defaults: {
-      modalClass: 'modal',
-      backdropClass: 'modal-backdrop',
+      overlayClass: 'overlay',
+      backdropClass: 'overlay-backdrop',
       backdropClick: true
     },
 
     init: function() {
 
-      if ($('.modal').length !== 0) {
-        $('.modal').modal('hide');
+      if ($('.'+this.overlayClass).length !== 0) {
+        $('.'+this.overlayClass).overlay('hide');
       }
 
       this.show();
@@ -232,7 +232,7 @@
     },
 
     show: function() {
-      this.el.addClass(this.modalClass);
+      this.el.addClass(this.overlayClass);
       $('body').css('overflow', 'hidden');
       this.showBackdrop();
       this.el.show();
@@ -240,12 +240,12 @@
     },
 
     hide: function() {
-      this.el.removeClass(this.modalClass);
+      this.el.removeClass(this.overlayClass);
       $('body').css('overflow', '');
       this.hideBackdrop();
       this.el.hide();
       this.emit('hide');
-      this.el.removeData('modal');
+      this.el.removeData('overlay');
     }
   });
 })(jQuery);
