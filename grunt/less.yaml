@@ -4,4 +4,4 @@ options:
 
 styles:
   files:
-    'dist/fidel.overlay.css': 'lib/modal.less'
+    'dist/overlay.css': 'lib/overlay.less'

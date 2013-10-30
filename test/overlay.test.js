@@ -12,115 +12,115 @@ suite('overlay', function() {
 
   teardown(function() {
     $('#fixture').empty();
-    $('.modal-backdrop').remove();
+    $('.overlay-backdrop').remove();
   });
 
-  test('$().modal exists', function() {
-    assert.equal(typeof $('#fixture').modal, 'function');
+  test('$().overlay exists', function() {
+    assert.equal(typeof $('#fixture').overlay, 'function');
   });
 
-  test('$().modal() returns el', function() {
-    var e = el.modal();
+  test('$().overlay() returns el', function() {
+    var e = el.overlay();
     assert.equal(e, el);
   });
 
-  test('$().modal() adds class and adds backdrop', function() {
-    el.modal();
+  test('$().overlay() adds class and adds backdrop', function() {
+    el.overlay();
 
     console.log(el);
-    assert.ok(el.hasClass('modal'));
-    assert.equal($('.modal-backdrop').length, 1);
+    assert.ok(el.hasClass('overlay'));
+    assert.equal($('.overlay-backdrop').length, 1);
   });
 
-  test('click data-action="hide" closes modal', function() {
-    el.modal();
-    assert.ok(el.hasClass('modal'));
-    assert.equal($('.modal-backdrop').length, 1);
+  test('click data-action="hide" closes overlay', function() {
+    el.overlay();
+    assert.ok(el.hasClass('overlay'));
+    assert.equal($('.overlay-backdrop').length, 1);
 
     $('button').click();
-    assert.equal($('.modal').length, 0);
-    assert.equal($('.modal-backdrop').length, 0);
+    assert.equal($('.overlay').length, 0);
+    assert.equal($('.overlay-backdrop').length, 0);
   });
 
-  test('click backdrop closes modal', function() {
-    el.modal();
-    $('.modal-backdrop').click();
-    assert.equal($('.modal').length, 0);
-    assert.equal($('.modal-backdrop').length, 0);
+  test('click backdrop closes overlay', function() {
+    el.overlay();
+    $('.overlay-backdrop').click();
+    assert.equal($('.overlay').length, 0);
+    assert.equal($('.overlay-backdrop').length, 0);
   });
 
   test('disable click backdrop', function() {
-    el.modal({ backdropClick: false });
-    $('.modal-backdrop').click();
-    assert.equal($('.modal').length, 1);
-    assert.equal($('.modal-backdrop').length, 1);
+    el.overlay({ backdropClick: false });
+    $('.overlay-backdrop').click();
+    assert.equal($('.overlay').length, 1);
+    assert.equal($('.overlay-backdrop').length, 1);
   });
 
-  test('$().modal("hide") closes', function() {
-    el.modal();
-    assert.ok(el.hasClass('modal'));
-    assert.equal($('.modal-backdrop').length, 1);
-    assert.equal(typeof el.data('modal'), 'object');
+  test('$().overlay("hide") closes', function() {
+    el.overlay();
+    assert.ok(el.hasClass('overlay'));
+    assert.equal($('.overlay-backdrop').length, 1);
+    assert.equal(typeof el.data('overlay'), 'object');
 
-    el.modal('hide');
-    assert.equal($('.modal').length, 0);
-    assert.equal($('.modal-backdrop').length, 0);
-    assert.equal(typeof el.data('modal'), 'undefined');
+    el.overlay('hide');
+    assert.equal($('.overlay').length, 0);
+    assert.equal($('.overlay-backdrop').length, 0);
+    assert.equal(typeof el.data('overlay'), 'undefined');
   });
 
-  test('$().modal("hide") doesn\'t error if not visible', function() {
+  test('$().overlay("hide") doesn\'t error if not visible', function() {
     assert.doesNotThrow(function() {
-      el.modal('hide');
+      el.overlay('hide');
     });
   });
 
-  test('$().modal("show") manually shows modal', function() {
-    el.modal();
-    assert.ok(el.hasClass('modal'));
-    assert.equal($('.modal-backdrop').length, 1);
+  test('$().overlay("show") manually shows overlay', function() {
+    el.overlay();
+    assert.ok(el.hasClass('overlay'));
+    assert.equal($('.overlay-backdrop').length, 1);
 
-    el.modal('hide');
-    assert.equal($('.modal').length, 0);
-    assert.equal($('.modal-backdrop').length, 0);
+    el.overlay('hide');
+    assert.equal($('.overlay').length, 0);
+    assert.equal($('.overlay-backdrop').length, 0);
 
-    el.modal('show');
-    assert.ok(el.hasClass('modal'));
-    assert.equal($('.modal-backdrop').length, 1);
+    el.overlay('show');
+    assert.ok(el.hasClass('overlay'));
+    assert.equal($('.overlay-backdrop').length, 1);
   });
 
   test('calling "show" twice doesn\'t add another backdrop', function() {
-    el.modal();
-    assert.ok(el.hasClass('modal'));
-    assert.equal($('.modal-backdrop').length, 1);
+    el.overlay();
+    assert.ok(el.hasClass('overlay'));
+    assert.equal($('.overlay-backdrop').length, 1);
 
-    el.modal('show');
-    assert.ok(el.hasClass('modal'));
-    assert.equal($('.modal-backdrop').length, 1);
+    el.overlay('show');
+    assert.ok(el.hasClass('overlay'));
+    assert.equal($('.overlay-backdrop').length, 1);
   });
 
-  test('adds overflow hidden on body when modal is open', function() {
-    el.modal();
+  test('adds overflow hidden on body when overlay is open', function() {
+    el.overlay();
 
     assert.equal($('body').css('overflow'), 'hidden');
   });
 
-  test('display: block when showing modal', function() {
-    el.modal();
+  test('display: block when showing overlay', function() {
+    el.overlay();
 
     assert.equal(el.css('display'), 'block');
   });
 
-  test('display: none when hiding modal', function() {
-    el.modal();
-    el.modal('hide');
+  test('display: none when hiding overlay', function() {
+    el.overlay();
+    el.overlay('hide');
 
     assert.equal(el.css('display'), 'none');
   });
 
   test('removes overflow hidden when closed', function() {
-    el.modal();
+    el.overlay();
 
-    el.modal('hide');
+    el.overlay('hide');
 
     assert.equal($('body').css('overflow'), 'visible');
 
@@ -128,52 +128,52 @@ suite('overlay', function() {
 
   test('event for on show', function(done) {
     el.on('show', function() { done(); });
-    el.modal();
+    el.overlay();
   });
 
   test('event for on hide', function(done) {
     el.on('hide', function() { done(); });
-    el.modal();
-    el.modal('hide');
+    el.overlay();
+    el.overlay('hide');
   });
 
-  test('test calling modal when one is already open', function() {
-    el.modal();
-    $('.content2').modal();
+  test('test calling overlay when one is already open', function() {
+    el.overlay();
+    $('.content2').overlay();
 
-    assert.ok(!el.hasClass('modal'));
-    assert.ok($('.content2').hasClass('modal'));
-    assert.equal($('.modal-backdrop').length, 1);
+    assert.ok(!el.hasClass('overlay'));
+    assert.ok($('.content2').hasClass('overlay'));
+    assert.equal($('.overlay-backdrop').length, 1);
   });
 
-  test('custom class for modal and modal-backdrop', function() {
-    el.modal({
-      modalClass: 'modal2',
-      backdropClass: 'modal-backdrop2'
+  test('custom class for overlay and overlay-backdrop', function() {
+    el.overlay({
+      overlayClass: 'overlay2',
+      backdropClass: 'overlay-backdrop2'
     });
 
-    assert.ok(el.hasClass('modal2'));
-    assert.equal($('.modal-backdrop2').length, 1);
+    assert.ok(el.hasClass('overlay2'));
+    assert.equal($('.overlay-backdrop2').length, 1);
 
     //cleanup
-    el.modal('hide');
+    el.overlay('hide');
   });
 
-  test('global settings for modalClass and backdropClass', function() {
-    $.fn.modal.defaults.modalClass = 'modal3';
-    $.fn.modal.defaults.backdropClass = 'modal-backdrop3';
+  test('global settings for overlayClass and backdropClass', function() {
+    $.fn.overlay.defaults.overlayClass = 'overlay3';
+    $.fn.overlay.defaults.backdropClass = 'overlay-backdrop3';
 
-    el.modal();
+    el.overlay();
 
-    assert.ok(el.hasClass('modal3'));
-    assert.equal($('.modal-backdrop3').length, 1);
+    assert.ok(el.hasClass('overlay3'));
+    assert.equal($('.overlay-backdrop3').length, 1);
 
     //cleanup
-    el.modal('hide');
-    $.fn.modal.defaults = {};
+    el.overlay('hide');
+    $.fn.overlay.defaults = {};
   });
 
-  test('$().modal("toggle")');
+  test('$().overlay("toggle")');
   
 });
 

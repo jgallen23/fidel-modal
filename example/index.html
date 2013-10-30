@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>fidel-modal example</title>
-    <link rel="stylesheet" href="../dist/fidel.modal.css"/>
+    <title>overlay example</title>
+    <link rel="stylesheet" href="../dist/overlay.css"/>
     <style>
       .content {
         display: none;
@@ -15,8 +15,8 @@
   </head>
   <body>
 
-    <button id="show">Show Modal</button>
-    <button id="showBD">Show Modal with backdropClick = false</button>
+    <button id="show">Show Overlay</button>
+    <button id="showBD">Show Overlay with backdropClick = false</button>
     <div class="content">
       <button data-action="hide">X</button>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis commodo congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed nec mattis lacus. Nam sed metus id massa consequat cursus. In eu dui ut dolor tincidunt cursus. Nunc volutpat, nisi quis semper varius, velit velit dictum orci, nec tristique nisl dolor ac elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed aliquet faucibus sem euismod viverra. Nulla a eros eget leo bibendum ullamcorper.</p>
@@ -53,13 +53,13 @@
 
     <script src="../bower_components/jquery/jquery.js"></script>
     <script src="../bower_components/fidel/dist/fidel.js"></script>
-    <script src="../dist/fidel.modal.js"></script>
+    <script src="../dist/fidel.overlay.js"></script>
     <script>
       $('#show').on('click', function() {
-        $('.content').modal();
+        $('.content').overlay();
       });
       $('#showBD').on('click', function() {
-        $('.content').modal({ backdropClick: false });
+        $('.content').overlay({ backdropClick: false });
       });
     </script>
   </body>
